@@ -126,54 +126,60 @@ namespace SnakeTail
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(8, 46);
+            label2.Location = new System.Drawing.Point(11, 57);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(70, 13);
+            label2.Size = new System.Drawing.Size(87, 17);
             label2.TabIndex = 13;
             label2.Text = "Window Icon";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(8, 16);
+            label1.Location = new System.Drawing.Point(11, 20);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(69, 13);
+            label1.Size = new System.Drawing.Size(88, 17);
             label1.TabIndex = 11;
             label1.Text = "Window Title";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(3, 9);
+            label3.Location = new System.Drawing.Point(4, 11);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(48, 13);
+            label3.Size = new System.Drawing.Size(63, 17);
             label3.TabIndex = 0;
             label3.Text = "File Path";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(3, 56);
+            label4.Location = new System.Drawing.Point(4, 69);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(71, 13);
+            label4.Size = new System.Drawing.Size(93, 17);
             label4.TabIndex = 2;
             label4.Text = "File Encoding";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(3, 84);
+            label5.Location = new System.Drawing.Point(4, 103);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(80, 13);
+            label5.Size = new System.Drawing.Size(105, 17);
             label5.TabIndex = 4;
             label5.Text = "File Cache Size";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(3, 165);
+            label7.Location = new System.Drawing.Point(4, 203);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(90, 13);
+            label7.Size = new System.Drawing.Size(115, 17);
             label7.TabIndex = 9;
             label7.Text = "Windows Service";
             // 
@@ -185,18 +191,20 @@ namespace SnakeTail
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(3, 113);
+            label6.Location = new System.Drawing.Point(4, 139);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(136, 13);
+            label6.Size = new System.Drawing.Size(177, 17);
             label6.TabIndex = 6;
             label6.Text = "File Reopen Check Interval";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(3, 139);
+            label8.Location = new System.Drawing.Point(4, 171);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(135, 13);
+            label8.Size = new System.Drawing.Size(176, 17);
             label8.TabIndex = 11;
             label8.Text = "File Change Check Interval";
             // 
@@ -208,18 +216,20 @@ namespace SnakeTail
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(209, 113);
+            label10.Location = new System.Drawing.Point(279, 139);
+            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(29, 13);
+            label10.Size = new System.Drawing.Size(37, 17);
             label10.TabIndex = 14;
             label10.Text = "secs";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(209, 139);
+            label9.Location = new System.Drawing.Point(279, 171);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(37, 13);
+            label9.Size = new System.Drawing.Size(48, 17);
             label9.TabIndex = 13;
             label9.Text = "msecs";
             // 
@@ -246,9 +256,10 @@ namespace SnakeTail
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(209, 165);
+            label11.Location = new System.Drawing.Point(279, 203);
+            label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(88, 13);
+            label11.Size = new System.Drawing.Size(114, 17);
             label11.TabIndex = 18;
             label11.Text = "Remote Machine";
             // 
@@ -258,10 +269,11 @@ namespace SnakeTail
             this._tabControl.Controls.Add(this._tabPageFile);
             this._tabControl.Controls.Add(this._tabPageKeyWords);
             this._tabControl.Controls.Add(this._tabPageExtTools);
-            this._tabControl.Location = new System.Drawing.Point(6, 6);
+            this._tabControl.Location = new System.Drawing.Point(8, 7);
+            this._tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._tabControl.Name = "_tabControl";
             this._tabControl.SelectedIndex = 0;
-            this._tabControl.Size = new System.Drawing.Size(428, 233);
+            this._tabControl.Size = new System.Drawing.Size(571, 287);
             this._tabControl.TabIndex = 8;
             this._tabControl.SelectedIndexChanged += new System.EventHandler(this._tabControl_SelectedIndexChanged);
             // 
@@ -277,19 +289,21 @@ namespace SnakeTail
             this._tabPageView.Controls.Add(this._windowTitleEdt);
             this._tabPageView.Controls.Add(this._backColorBtn);
             this._tabPageView.Controls.Add(this._textFontBtn);
-            this._tabPageView.Location = new System.Drawing.Point(4, 22);
+            this._tabPageView.Location = new System.Drawing.Point(4, 25);
+            this._tabPageView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._tabPageView.Name = "_tabPageView";
-            this._tabPageView.Padding = new System.Windows.Forms.Padding(3);
-            this._tabPageView.Size = new System.Drawing.Size(420, 207);
+            this._tabPageView.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._tabPageView.Size = new System.Drawing.Size(563, 258);
             this._tabPageView.TabIndex = 0;
             this._tabPageView.Text = "View";
             this._tabPageView.UseVisualStyleBackColor = true;
             // 
             // _bookmarkTextColorBtn
             // 
-            this._bookmarkTextColorBtn.Location = new System.Drawing.Point(199, 98);
+            this._bookmarkTextColorBtn.Location = new System.Drawing.Point(265, 121);
+            this._bookmarkTextColorBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._bookmarkTextColorBtn.Name = "_bookmarkTextColorBtn";
-            this._bookmarkTextColorBtn.Size = new System.Drawing.Size(125, 23);
+            this._bookmarkTextColorBtn.Size = new System.Drawing.Size(167, 28);
             this._bookmarkTextColorBtn.TabIndex = 18;
             this._bookmarkTextColorBtn.Text = "Bookmark Text Color";
             this._bookmarkTextColorBtn.UseVisualStyleBackColor = true;
@@ -298,9 +312,10 @@ namespace SnakeTail
             // _textColorBtn
             // 
             this._textColorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this._textColorBtn.Location = new System.Drawing.Point(11, 98);
+            this._textColorBtn.Location = new System.Drawing.Point(15, 121);
+            this._textColorBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._textColorBtn.Name = "_textColorBtn";
-            this._textColorBtn.Size = new System.Drawing.Size(125, 23);
+            this._textColorBtn.Size = new System.Drawing.Size(167, 28);
             this._textColorBtn.TabIndex = 17;
             this._textColorBtn.Text = "Text Color";
             this._textColorBtn.UseVisualStyleBackColor = true;
@@ -308,9 +323,10 @@ namespace SnakeTail
             // 
             // _bookmarkBackColorBtn
             // 
-            this._bookmarkBackColorBtn.Location = new System.Drawing.Point(199, 127);
+            this._bookmarkBackColorBtn.Location = new System.Drawing.Point(265, 156);
+            this._bookmarkBackColorBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._bookmarkBackColorBtn.Name = "_bookmarkBackColorBtn";
-            this._bookmarkBackColorBtn.Size = new System.Drawing.Size(125, 23);
+            this._bookmarkBackColorBtn.Size = new System.Drawing.Size(167, 28);
             this._bookmarkBackColorBtn.TabIndex = 16;
             this._bookmarkBackColorBtn.Text = "Bookmark Background";
             this._bookmarkBackColorBtn.UseVisualStyleBackColor = true;
@@ -319,32 +335,36 @@ namespace SnakeTail
             // _displayIconChk
             // 
             this._displayIconChk.AutoSize = true;
-            this._displayIconChk.Location = new System.Drawing.Point(11, 184);
+            this._displayIconChk.Location = new System.Drawing.Point(15, 226);
+            this._displayIconChk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._displayIconChk.Name = "_displayIconChk";
-            this._displayIconChk.Size = new System.Drawing.Size(172, 17);
+            this._displayIconChk.Size = new System.Drawing.Size(224, 21);
             this._displayIconChk.TabIndex = 14;
             this._displayIconChk.Text = "Display tab icon on log change";
             this._displayIconChk.UseVisualStyleBackColor = true;
             // 
             // _windowIconEdt
             // 
-            this._windowIconEdt.Location = new System.Drawing.Point(84, 43);
+            this._windowIconEdt.Location = new System.Drawing.Point(112, 53);
+            this._windowIconEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._windowIconEdt.Name = "_windowIconEdt";
-            this._windowIconEdt.Size = new System.Drawing.Size(269, 20);
+            this._windowIconEdt.Size = new System.Drawing.Size(357, 22);
             this._windowIconEdt.TabIndex = 2;
             // 
             // _windowTitleEdt
             // 
-            this._windowTitleEdt.Location = new System.Drawing.Point(84, 13);
+            this._windowTitleEdt.Location = new System.Drawing.Point(112, 16);
+            this._windowTitleEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._windowTitleEdt.Name = "_windowTitleEdt";
-            this._windowTitleEdt.Size = new System.Drawing.Size(115, 20);
+            this._windowTitleEdt.Size = new System.Drawing.Size(152, 22);
             this._windowTitleEdt.TabIndex = 1;
             // 
             // _backColorBtn
             // 
-            this._backColorBtn.Location = new System.Drawing.Point(11, 127);
+            this._backColorBtn.Location = new System.Drawing.Point(15, 156);
+            this._backColorBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._backColorBtn.Name = "_backColorBtn";
-            this._backColorBtn.Size = new System.Drawing.Size(125, 23);
+            this._backColorBtn.Size = new System.Drawing.Size(167, 28);
             this._backColorBtn.TabIndex = 4;
             this._backColorBtn.Text = "Background Color";
             this._backColorBtn.UseVisualStyleBackColor = true;
@@ -352,9 +372,10 @@ namespace SnakeTail
             // 
             // _textFontBtn
             // 
-            this._textFontBtn.Location = new System.Drawing.Point(11, 69);
+            this._textFontBtn.Location = new System.Drawing.Point(15, 85);
+            this._textFontBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._textFontBtn.Name = "_textFontBtn";
-            this._textFontBtn.Size = new System.Drawing.Size(125, 23);
+            this._textFontBtn.Size = new System.Drawing.Size(167, 28);
             this._textFontBtn.TabIndex = 3;
             this._textFontBtn.Text = "Text Font";
             this._textFontBtn.UseVisualStyleBackColor = true;
@@ -381,36 +402,40 @@ namespace SnakeTail
             this._tabPageFile.Controls.Add(this._fileEncodingCmb);
             this._tabPageFile.Controls.Add(label3);
             this._tabPageFile.Controls.Add(this._filePathEdt);
-            this._tabPageFile.Location = new System.Drawing.Point(4, 22);
+            this._tabPageFile.Location = new System.Drawing.Point(4, 25);
+            this._tabPageFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._tabPageFile.Name = "_tabPageFile";
-            this._tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this._tabPageFile.Size = new System.Drawing.Size(420, 207);
+            this._tabPageFile.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._tabPageFile.Size = new System.Drawing.Size(563, 258);
             this._tabPageFile.TabIndex = 1;
             this._tabPageFile.Text = "Log File";
             this._tabPageFile.UseVisualStyleBackColor = true;
             // 
             // _windowServiceHostEdt
             // 
-            this._windowServiceHostEdt.Location = new System.Drawing.Point(303, 162);
+            this._windowServiceHostEdt.Location = new System.Drawing.Point(404, 199);
+            this._windowServiceHostEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._windowServiceHostEdt.Name = "_windowServiceHostEdt";
-            this._windowServiceHostEdt.Size = new System.Drawing.Size(100, 20);
+            this._windowServiceHostEdt.Size = new System.Drawing.Size(132, 22);
             this._windowServiceHostEdt.TabIndex = 17;
             // 
             // _titleMatchFilenameChk
             // 
             this._titleMatchFilenameChk.AutoSize = true;
-            this._titleMatchFilenameChk.Location = new System.Drawing.Point(221, 30);
+            this._titleMatchFilenameChk.Location = new System.Drawing.Point(295, 37);
+            this._titleMatchFilenameChk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._titleMatchFilenameChk.Name = "_titleMatchFilenameChk";
-            this._titleMatchFilenameChk.Size = new System.Drawing.Size(120, 17);
+            this._titleMatchFilenameChk.Size = new System.Drawing.Size(156, 21);
             this._titleMatchFilenameChk.TabIndex = 16;
             this._titleMatchFilenameChk.Text = "Title match filename";
             this._titleMatchFilenameChk.UseVisualStyleBackColor = true;
             // 
             // _browseBtn
             // 
-            this._browseBtn.Location = new System.Drawing.Point(323, 6);
+            this._browseBtn.Location = new System.Drawing.Point(431, 7);
+            this._browseBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._browseBtn.Name = "_browseBtn";
-            this._browseBtn.Size = new System.Drawing.Size(30, 20);
+            this._browseBtn.Size = new System.Drawing.Size(40, 25);
             this._browseBtn.TabIndex = 15;
             this._browseBtn.Text = "...";
             this._browseBtn.UseVisualStyleBackColor = true;
@@ -418,17 +443,19 @@ namespace SnakeTail
             // 
             // _fileChangeCheckIntervalEdt
             // 
-            this._fileChangeCheckIntervalEdt.Location = new System.Drawing.Point(144, 136);
+            this._fileChangeCheckIntervalEdt.Location = new System.Drawing.Point(192, 167);
+            this._fileChangeCheckIntervalEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._fileChangeCheckIntervalEdt.Name = "_fileChangeCheckIntervalEdt";
-            this._fileChangeCheckIntervalEdt.Size = new System.Drawing.Size(59, 20);
+            this._fileChangeCheckIntervalEdt.Size = new System.Drawing.Size(77, 22);
             this._fileChangeCheckIntervalEdt.TabIndex = 12;
             // 
             // _fileCheckPatternChk
             // 
             this._fileCheckPatternChk.AutoSize = true;
-            this._fileCheckPatternChk.Location = new System.Drawing.Point(103, 30);
+            this._fileCheckPatternChk.Location = new System.Drawing.Point(137, 37);
+            this._fileCheckPatternChk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._fileCheckPatternChk.Name = "_fileCheckPatternChk";
-            this._fileCheckPatternChk.Size = new System.Drawing.Size(112, 17);
+            this._fileCheckPatternChk.Size = new System.Drawing.Size(142, 21);
             this._fileCheckPatternChk.TabIndex = 8;
             this._fileCheckPatternChk.Text = "Path with wildcard";
             this._fileCheckPatternChk.UseVisualStyleBackColor = true;
@@ -436,39 +463,44 @@ namespace SnakeTail
             // 
             // _fileReopenCheckIntervalEdt
             // 
-            this._fileReopenCheckIntervalEdt.Location = new System.Drawing.Point(144, 110);
+            this._fileReopenCheckIntervalEdt.Location = new System.Drawing.Point(192, 135);
+            this._fileReopenCheckIntervalEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._fileReopenCheckIntervalEdt.Name = "_fileReopenCheckIntervalEdt";
-            this._fileReopenCheckIntervalEdt.Size = new System.Drawing.Size(59, 20);
+            this._fileReopenCheckIntervalEdt.Size = new System.Drawing.Size(77, 22);
             this._fileReopenCheckIntervalEdt.TabIndex = 7;
             // 
             // _windowServiceEdt
             // 
-            this._windowServiceEdt.Location = new System.Drawing.Point(103, 162);
+            this._windowServiceEdt.Location = new System.Drawing.Point(137, 199);
+            this._windowServiceEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._windowServiceEdt.Name = "_windowServiceEdt";
-            this._windowServiceEdt.Size = new System.Drawing.Size(100, 20);
+            this._windowServiceEdt.Size = new System.Drawing.Size(132, 22);
             this._windowServiceEdt.TabIndex = 10;
             // 
             // _fileCacheSizeEdt
             // 
-            this._fileCacheSizeEdt.Location = new System.Drawing.Point(103, 81);
+            this._fileCacheSizeEdt.Location = new System.Drawing.Point(137, 100);
+            this._fileCacheSizeEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._fileCacheSizeEdt.Name = "_fileCacheSizeEdt";
-            this._fileCacheSizeEdt.Size = new System.Drawing.Size(100, 20);
+            this._fileCacheSizeEdt.Size = new System.Drawing.Size(132, 22);
             this._fileCacheSizeEdt.TabIndex = 5;
             // 
             // _fileEncodingCmb
             // 
             this._fileEncodingCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._fileEncodingCmb.FormattingEnabled = true;
-            this._fileEncodingCmb.Location = new System.Drawing.Point(103, 53);
+            this._fileEncodingCmb.Location = new System.Drawing.Point(137, 65);
+            this._fileEncodingCmb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._fileEncodingCmb.Name = "_fileEncodingCmb";
-            this._fileEncodingCmb.Size = new System.Drawing.Size(250, 21);
+            this._fileEncodingCmb.Size = new System.Drawing.Size(332, 24);
             this._fileEncodingCmb.TabIndex = 3;
             // 
             // _filePathEdt
             // 
-            this._filePathEdt.Location = new System.Drawing.Point(103, 6);
+            this._filePathEdt.Location = new System.Drawing.Point(137, 7);
+            this._filePathEdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._filePathEdt.Name = "_filePathEdt";
-            this._filePathEdt.Size = new System.Drawing.Size(214, 20);
+            this._filePathEdt.Size = new System.Drawing.Size(284, 22);
             this._filePathEdt.TabIndex = 1;
             // 
             // _tabPageKeyWords
@@ -479,19 +511,21 @@ namespace SnakeTail
             this._tabPageKeyWords.Controls.Add(this._edtWordBtn);
             this._tabPageKeyWords.Controls.Add(this._addWordBtn);
             this._tabPageKeyWords.Controls.Add(this._keywordListView);
-            this._tabPageKeyWords.Location = new System.Drawing.Point(4, 22);
+            this._tabPageKeyWords.Location = new System.Drawing.Point(4, 25);
+            this._tabPageKeyWords.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._tabPageKeyWords.Name = "_tabPageKeyWords";
-            this._tabPageKeyWords.Padding = new System.Windows.Forms.Padding(3);
-            this._tabPageKeyWords.Size = new System.Drawing.Size(420, 207);
+            this._tabPageKeyWords.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._tabPageKeyWords.Size = new System.Drawing.Size(563, 258);
             this._tabPageKeyWords.TabIndex = 2;
             this._tabPageKeyWords.Text = "Keyword Highlight";
             this._tabPageKeyWords.UseVisualStyleBackColor = true;
             // 
             // _moveDownKeywordBtn
             // 
-            this._moveDownKeywordBtn.Location = new System.Drawing.Point(339, 147);
+            this._moveDownKeywordBtn.Location = new System.Drawing.Point(452, 181);
+            this._moveDownKeywordBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._moveDownKeywordBtn.Name = "_moveDownKeywordBtn";
-            this._moveDownKeywordBtn.Size = new System.Drawing.Size(75, 23);
+            this._moveDownKeywordBtn.Size = new System.Drawing.Size(100, 28);
             this._moveDownKeywordBtn.TabIndex = 11;
             this._moveDownKeywordBtn.Text = "Move Down";
             this._moveDownKeywordBtn.UseVisualStyleBackColor = true;
@@ -499,9 +533,10 @@ namespace SnakeTail
             // 
             // _moveUpKeywordBtn
             // 
-            this._moveUpKeywordBtn.Location = new System.Drawing.Point(339, 118);
+            this._moveUpKeywordBtn.Location = new System.Drawing.Point(452, 145);
+            this._moveUpKeywordBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._moveUpKeywordBtn.Name = "_moveUpKeywordBtn";
-            this._moveUpKeywordBtn.Size = new System.Drawing.Size(75, 23);
+            this._moveUpKeywordBtn.Size = new System.Drawing.Size(100, 28);
             this._moveUpKeywordBtn.TabIndex = 10;
             this._moveUpKeywordBtn.Text = "Move Up";
             this._moveUpKeywordBtn.UseVisualStyleBackColor = true;
@@ -509,9 +544,10 @@ namespace SnakeTail
             // 
             // _delWordBtn
             // 
-            this._delWordBtn.Location = new System.Drawing.Point(339, 64);
+            this._delWordBtn.Location = new System.Drawing.Point(452, 79);
+            this._delWordBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._delWordBtn.Name = "_delWordBtn";
-            this._delWordBtn.Size = new System.Drawing.Size(75, 23);
+            this._delWordBtn.Size = new System.Drawing.Size(100, 28);
             this._delWordBtn.TabIndex = 4;
             this._delWordBtn.Text = "Remove";
             this._delWordBtn.UseVisualStyleBackColor = true;
@@ -519,9 +555,10 @@ namespace SnakeTail
             // 
             // _edtWordBtn
             // 
-            this._edtWordBtn.Location = new System.Drawing.Point(339, 35);
+            this._edtWordBtn.Location = new System.Drawing.Point(452, 43);
+            this._edtWordBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._edtWordBtn.Name = "_edtWordBtn";
-            this._edtWordBtn.Size = new System.Drawing.Size(75, 23);
+            this._edtWordBtn.Size = new System.Drawing.Size(100, 28);
             this._edtWordBtn.TabIndex = 3;
             this._edtWordBtn.Text = "Edit...";
             this._edtWordBtn.UseVisualStyleBackColor = true;
@@ -529,9 +566,10 @@ namespace SnakeTail
             // 
             // _addWordBtn
             // 
-            this._addWordBtn.Location = new System.Drawing.Point(339, 6);
+            this._addWordBtn.Location = new System.Drawing.Point(452, 7);
+            this._addWordBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._addWordBtn.Name = "_addWordBtn";
-            this._addWordBtn.Size = new System.Drawing.Size(75, 23);
+            this._addWordBtn.Size = new System.Drawing.Size(100, 28);
             this._addWordBtn.TabIndex = 2;
             this._addWordBtn.Text = "Add...";
             this._addWordBtn.UseVisualStyleBackColor = true;
@@ -549,10 +587,11 @@ namespace SnakeTail
             keywordAlertColumnHeader});
             this._keywordListView.FullRowSelect = true;
             this._keywordListView.HideSelection = false;
-            this._keywordListView.Location = new System.Drawing.Point(6, 6);
+            this._keywordListView.Location = new System.Drawing.Point(8, 7);
+            this._keywordListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._keywordListView.MultiSelect = false;
             this._keywordListView.Name = "_keywordListView";
-            this._keywordListView.Size = new System.Drawing.Size(327, 195);
+            this._keywordListView.Size = new System.Drawing.Size(435, 239);
             this._keywordListView.TabIndex = 0;
             this._keywordListView.UseCompatibleStateImageBehavior = false;
             this._keywordListView.View = System.Windows.Forms.View.Details;
@@ -566,19 +605,21 @@ namespace SnakeTail
             this._tabPageExtTools.Controls.Add(this._editToolBtn);
             this._tabPageExtTools.Controls.Add(this._addToolBtn);
             this._tabPageExtTools.Controls.Add(this._extToolsListView);
-            this._tabPageExtTools.Location = new System.Drawing.Point(4, 22);
+            this._tabPageExtTools.Location = new System.Drawing.Point(4, 25);
+            this._tabPageExtTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._tabPageExtTools.Name = "_tabPageExtTools";
-            this._tabPageExtTools.Padding = new System.Windows.Forms.Padding(3);
-            this._tabPageExtTools.Size = new System.Drawing.Size(420, 207);
+            this._tabPageExtTools.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._tabPageExtTools.Size = new System.Drawing.Size(563, 258);
             this._tabPageExtTools.TabIndex = 3;
             this._tabPageExtTools.Text = "External Tools";
             this._tabPageExtTools.UseVisualStyleBackColor = true;
             // 
             // _moveDownToolBtn
             // 
-            this._moveDownToolBtn.Location = new System.Drawing.Point(339, 147);
+            this._moveDownToolBtn.Location = new System.Drawing.Point(452, 181);
+            this._moveDownToolBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._moveDownToolBtn.Name = "_moveDownToolBtn";
-            this._moveDownToolBtn.Size = new System.Drawing.Size(75, 23);
+            this._moveDownToolBtn.Size = new System.Drawing.Size(100, 28);
             this._moveDownToolBtn.TabIndex = 10;
             this._moveDownToolBtn.Text = "Move Down";
             this._moveDownToolBtn.UseVisualStyleBackColor = true;
@@ -586,9 +627,10 @@ namespace SnakeTail
             // 
             // _moveUpToolBtn
             // 
-            this._moveUpToolBtn.Location = new System.Drawing.Point(339, 118);
+            this._moveUpToolBtn.Location = new System.Drawing.Point(452, 145);
+            this._moveUpToolBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._moveUpToolBtn.Name = "_moveUpToolBtn";
-            this._moveUpToolBtn.Size = new System.Drawing.Size(75, 23);
+            this._moveUpToolBtn.Size = new System.Drawing.Size(100, 28);
             this._moveUpToolBtn.TabIndex = 9;
             this._moveUpToolBtn.Text = "Move Up";
             this._moveUpToolBtn.UseVisualStyleBackColor = true;
@@ -596,9 +638,10 @@ namespace SnakeTail
             // 
             // _delToolBtn
             // 
-            this._delToolBtn.Location = new System.Drawing.Point(339, 64);
+            this._delToolBtn.Location = new System.Drawing.Point(452, 79);
+            this._delToolBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._delToolBtn.Name = "_delToolBtn";
-            this._delToolBtn.Size = new System.Drawing.Size(75, 23);
+            this._delToolBtn.Size = new System.Drawing.Size(100, 28);
             this._delToolBtn.TabIndex = 8;
             this._delToolBtn.Text = "Remove";
             this._delToolBtn.UseVisualStyleBackColor = true;
@@ -606,9 +649,10 @@ namespace SnakeTail
             // 
             // _editToolBtn
             // 
-            this._editToolBtn.Location = new System.Drawing.Point(339, 35);
+            this._editToolBtn.Location = new System.Drawing.Point(452, 43);
+            this._editToolBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editToolBtn.Name = "_editToolBtn";
-            this._editToolBtn.Size = new System.Drawing.Size(75, 23);
+            this._editToolBtn.Size = new System.Drawing.Size(100, 28);
             this._editToolBtn.TabIndex = 7;
             this._editToolBtn.Text = "Edit...";
             this._editToolBtn.UseVisualStyleBackColor = true;
@@ -616,9 +660,10 @@ namespace SnakeTail
             // 
             // _addToolBtn
             // 
-            this._addToolBtn.Location = new System.Drawing.Point(339, 6);
+            this._addToolBtn.Location = new System.Drawing.Point(452, 7);
+            this._addToolBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._addToolBtn.Name = "_addToolBtn";
-            this._addToolBtn.Size = new System.Drawing.Size(75, 23);
+            this._addToolBtn.Size = new System.Drawing.Size(100, 28);
             this._addToolBtn.TabIndex = 6;
             this._addToolBtn.Text = "Add...";
             this._addToolBtn.UseVisualStyleBackColor = true;
@@ -634,10 +679,11 @@ namespace SnakeTail
             toolShortcutColumnHeader});
             this._extToolsListView.FullRowSelect = true;
             this._extToolsListView.HideSelection = false;
-            this._extToolsListView.Location = new System.Drawing.Point(6, 6);
+            this._extToolsListView.Location = new System.Drawing.Point(8, 7);
+            this._extToolsListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._extToolsListView.MultiSelect = false;
             this._extToolsListView.Name = "_extToolsListView";
-            this._extToolsListView.Size = new System.Drawing.Size(327, 195);
+            this._extToolsListView.Size = new System.Drawing.Size(435, 239);
             this._extToolsListView.TabIndex = 5;
             this._extToolsListView.UseCompatibleStateImageBehavior = false;
             this._extToolsListView.View = System.Windows.Forms.View.Details;
@@ -647,9 +693,10 @@ namespace SnakeTail
             // 
             this._acceptBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._acceptBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this._acceptBtn.Location = new System.Drawing.Point(272, 245);
+            this._acceptBtn.Location = new System.Drawing.Point(363, 302);
+            this._acceptBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._acceptBtn.Name = "_acceptBtn";
-            this._acceptBtn.Size = new System.Drawing.Size(75, 23);
+            this._acceptBtn.Size = new System.Drawing.Size(100, 28);
             this._acceptBtn.TabIndex = 14;
             this._acceptBtn.Text = "OK";
             this._acceptBtn.UseVisualStyleBackColor = true;
@@ -659,9 +706,10 @@ namespace SnakeTail
             // 
             this._cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._cancelBtn.Location = new System.Drawing.Point(353, 245);
+            this._cancelBtn.Location = new System.Drawing.Point(471, 302);
+            this._cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._cancelBtn.Name = "_cancelBtn";
-            this._cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this._cancelBtn.Size = new System.Drawing.Size(100, 28);
             this._cancelBtn.TabIndex = 15;
             this._cancelBtn.Text = "Cancel";
             this._cancelBtn.UseVisualStyleBackColor = true;
@@ -669,18 +717,20 @@ namespace SnakeTail
             // _applyAllBtn
             // 
             this._applyAllBtn.DialogResult = System.Windows.Forms.DialogResult.Retry;
-            this._applyAllBtn.Location = new System.Drawing.Point(10, 245);
+            this._applyAllBtn.Location = new System.Drawing.Point(13, 302);
+            this._applyAllBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._applyAllBtn.Name = "_applyAllBtn";
-            this._applyAllBtn.Size = new System.Drawing.Size(67, 23);
+            this._applyAllBtn.Size = new System.Drawing.Size(89, 28);
             this._applyAllBtn.TabIndex = 16;
             this._applyAllBtn.Text = "Apply to All";
             this._applyAllBtn.UseVisualStyleBackColor = true;
             // 
             // _saveDefaultBtn
             // 
-            this._saveDefaultBtn.Location = new System.Drawing.Point(83, 245);
+            this._saveDefaultBtn.Location = new System.Drawing.Point(111, 302);
+            this._saveDefaultBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._saveDefaultBtn.Name = "_saveDefaultBtn";
-            this._saveDefaultBtn.Size = new System.Drawing.Size(89, 23);
+            this._saveDefaultBtn.Size = new System.Drawing.Size(119, 28);
             this._saveDefaultBtn.TabIndex = 17;
             this._saveDefaultBtn.Text = "Save as default";
             this._saveDefaultBtn.UseVisualStyleBackColor = true;
@@ -689,16 +739,17 @@ namespace SnakeTail
             // TailConfigForm
             // 
             this.AcceptButton = this._acceptBtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._cancelBtn;
-            this.ClientSize = new System.Drawing.Size(440, 271);
+            this.ClientSize = new System.Drawing.Size(587, 334);
             this.Controls.Add(this._saveDefaultBtn);
             this.Controls.Add(this._applyAllBtn);
             this.Controls.Add(this._cancelBtn);
             this.Controls.Add(this._acceptBtn);
             this.Controls.Add(this._tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TailConfigForm";

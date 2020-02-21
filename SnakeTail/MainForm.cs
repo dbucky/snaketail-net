@@ -1,4 +1,4 @@
-﻿#region License statement
+#region License statement
 /* SnakeTail is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, version 3 of the License.
@@ -13,6 +13,7 @@
  */
 #endregion
 
+using JWC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,8 +36,10 @@ namespace SnakeTail
         private TailFileConfig _defaultTailConfig = null;
         private string _currenTailConfig = null;
 
-        private string _mruRegKey = "SOFTWARE\\SnakeNest.com\\SnakeTail\\MRU";
-        private JWC.MruStripMenu _mruMenu;
+        private string _recentFilesRegistryKey = "SOFTWARE\\SnakeNest.com\\SnakeTail\\RecentFiles";
+        private string _favoriteFoldersRegistryKey = "SOFTWARE\\SnakeNest.com\\SnakeTail\\FavoriteFolders";
+        private JWC.MruStripMenu _recentFilesMenu;
+        public JWC.FavoritesMenu _favoriteFoldersMenu;
 
         public MainForm()
         {
@@ -52,19 +55,31 @@ namespace SnakeTail
             _MDITabControl.ImageList.Images.Add(new Bitmap(Properties.Resources.GreenBulletIcon.ToBitmap()));
             _MDITabControl.ImageList.Images.Add(new Bitmap(Properties.Resources.YellowBulletIcon.ToBitmap()));
 
-            bool loadFromRegistry = false;
+            bool loadRecentFilesFromRegistry = false;
             try
             {
-                Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(_mruRegKey);
+                Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(_recentFilesRegistryKey);
                 if (regKey != null)
-                    loadFromRegistry = true;
+                    loadRecentFilesFromRegistry = true;
             }
             catch
             {
             }
+            saveRecentFilesToRegistryToolStripMenuItem.Checked = loadRecentFilesFromRegistry;
+            _recentFilesMenu = new JWC.MruStripMenuInline(recentFilesToolStripMenuItem, recentFile1ToolStripMenuItem, new JWC.MruStripMenuInline.ClickedHandler(OnRecentFile), _recentFilesRegistryKey, loadRecentFilesFromRegistry, 10);
 
-            saveRecentFilesToRegistryToolStripMenuItem.Checked = loadFromRegistry;
-            _mruMenu = new JWC.MruStripMenuInline(recentFilesToolStripMenuItem, recentFile1ToolStripMenuItem, new JWC.MruStripMenu.ClickedHandler(OnMruFile), _mruRegKey, loadFromRegistry, 10);
+            bool loadFavoriteFoldersFromRegistry = false;
+            try
+            {
+                Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(_favoriteFoldersRegistryKey);
+                if (regKey != null)
+                    loadFavoriteFoldersFromRegistry = true;
+            }
+            catch
+            {
+            }
+            saveFavoriteFoldersToRegistryToolStripMenuItem.Checked = loadFavoriteFoldersFromRegistry;
+            _favoriteFoldersMenu = new JWC.FavoritesMenuInline(favoriteFoldersToolStripMenuItem, noFavoriteFoldersToolStripMenuItem, new JWC.FavoritesMenuInline.ClickedHandler(OnFavoriteFolder), _favoriteFoldersRegistryKey, loadFavoriteFoldersFromRegistry, 10);
         }
 
         private void UpdateTitle()
@@ -219,7 +234,7 @@ namespace SnakeTail
             OpenFileSelection(fileDialog.FileNames);
         }
 
-        private void OnMruFile(int number, String filename)
+        private void OnRecentFile(int number, String filename)
         {
             bool openedFile = false;
             if (filename.EndsWith(".xml", StringComparison.CurrentCultureIgnoreCase))
@@ -230,8 +245,21 @@ namespace SnakeTail
             if (!openedFile)
             {
                 MessageBox.Show(this, "The file '" + filename + "'cannot be opened and will be removed from the Recent list(s)", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _mruMenu.RemoveFile(number);
+                _recentFilesMenu.RemoveFile(number);
             }
+        }
+
+        private void OnFavoriteFolder(int number, Favorite favorite)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.InitialDirectory = favorite.Path;
+            fileDialog.Multiselect = true;
+            fileDialog.Title = "Open Log File";
+            fileDialog.Filter = "Default Filter|*.txt;*.text;*.log*;*.xlog|Log Files|*.log*;*.xlog|Text Files|*.txt;*.text|All Files|*.*";
+            if (fileDialog.ShowDialog(this) != DialogResult.OK)
+                return;
+
+            OpenFileSelection(fileDialog.FileNames);
         }
 
         private static string GetDefaultConfigPath()
@@ -278,6 +306,7 @@ namespace SnakeTail
             }
 
             int filesOpened = 0;
+            var folders = new Dictionary<string, int>();
             foreach (string filename in filenames)
             {
                 string configPath = "";
@@ -301,12 +330,17 @@ namespace SnakeTail
                 {
                     if (string.IsNullOrEmpty(configPath))
                     {
-                        new DirectoryInfo(Path.GetDirectoryName(filename));
-                        _mruMenu.AddFile(filename);
+                        var folder = Path.GetDirectoryName(filename);
+                        new DirectoryInfo(folder);
+                        RecordFolder(folders, folder);
+                        _recentFilesMenu.AddFile(filename);
                     }
                     else
                     {
-                        _mruMenu.AddFile(Path.Combine(configPath, filename));
+                        var combined = Path.Combine(configPath, filename);
+                        var folder = Path.GetDirectoryName(combined);
+                        RecordFolder(folders, folder);
+                        _recentFilesMenu.AddFile(combined);
                     }
                 }
                 catch
@@ -318,7 +352,25 @@ namespace SnakeTail
                 ++filesOpened;
                 Application.DoEvents();
             }
+
+            foreach (var folder in folders.Keys)
+            {
+                _favoriteFoldersMenu.AddFavorite(folder);
+            }
+
             return filesOpened;
+        }
+
+        private void RecordFolder(Dictionary<string, int> folders, string folder)
+        {
+            if (folders.ContainsKey(folder))
+            {
+                folders[folder]++;
+            }
+            else
+            {
+                folders.Add(folder, 1);
+            }
         }
 
         private void openEventLogToolStripMenuItem_Click(object sender, EventArgs e)
@@ -503,9 +555,9 @@ namespace SnakeTail
             SaveConfig(tailConfig, filepath);
 
             if (String.IsNullOrEmpty(_currenTailConfig))
-                _mruMenu.AddFile(filepath);
+                _recentFilesMenu.AddFile(filepath);
             else if (_currenTailConfig != filepath)
-                _mruMenu.RenameFile(_currenTailConfig, filepath);
+                _recentFilesMenu.RenameFile(_currenTailConfig, filepath);
 
             _currenTailConfig = filepath;
 
@@ -586,7 +638,7 @@ namespace SnakeTail
             if (tailConfig == null)
                 return false;
 
-            _mruMenu.AddFile(filepath);
+            _recentFilesMenu.AddFile(filepath);
 
             if (!tailConfig.MinimizedToTray)
             {
@@ -873,7 +925,7 @@ namespace SnakeTail
 
         private void clearListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _mruMenu.RemoveAll();
+            _recentFilesMenu.RemoveAll();
         }
 
         private void saveRecentFilesToRegistryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -883,7 +935,7 @@ namespace SnakeTail
                 try
                 {
                     Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser;
-                    regKey.DeleteSubKey(_mruRegKey, false);
+                    regKey.DeleteSubKey(_recentFilesRegistryKey, false);
                     saveRecentFilesToRegistryToolStripMenuItem.Checked = false;
                 }
                 catch (Exception ex)
@@ -903,7 +955,9 @@ namespace SnakeTail
             {
                 _instance = null;
                 if (saveRecentFilesToRegistryToolStripMenuItem.Checked)
-                    _mruMenu.SaveToRegistry();
+                    _recentFilesMenu.SaveToRegistry();
+                if (saveFavoriteFoldersToRegistryToolStripMenuItem.Checked)
+                    _favoriteFoldersMenu.SaveToRegistry();
             }
             catch(Exception ex)
             {
@@ -978,6 +1032,33 @@ namespace SnakeTail
             if (tailForm != null)
             {
                 tailForm.OpenExplorer();
+            }
+        }
+
+        private void manageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var manageFavoriteFolders = new ManageFavoriteFoldersForm();
+            manageFavoriteFolders.ShowDialog(this);
+        }
+
+        private void saveInWindowsRegistryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFavoriteFoldersToRegistryToolStripMenuItem.Checked)
+            {
+                try
+                {
+                    Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser;
+                    regKey.DeleteSubKey(_favoriteFoldersRegistryKey, false);
+                    saveFavoriteFoldersToRegistryToolStripMenuItem.Checked = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "Failed to remove list of favorite folders from registry.\n\n" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                saveFavoriteFoldersToRegistryToolStripMenuItem.Checked = true;
             }
         }
     }
